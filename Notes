@@ -6,3 +6,17 @@
 
 == ToDo
 - Learn rdoc and ruby toolchains for doc
+
+== Symbols
+✓ 2713 require
+· 00B7 classname separator
+§ 00A7 class def
+λ 03BB method def
+∍ 220D object element
+↔ 2194 read/write accessor
+∅ 2205 null
+⊤ 22A4 true
+⊥ 22A5 false
+∀ 2200 each
+« 00AB
+» 00BB
