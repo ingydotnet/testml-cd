@@ -1,0 +1,25 @@
+name: TestML
+description: Acmeist Unit Testing Framework
+version: 0.0.1
+licenses:
+- type: MIT
+  url: https://raw.github.com/ingydotnet/testml-cd/master/LICENSE
+copyright: 2010-2013
+
+author:
+- name: Ingy döt Net
+  email: ingy@ingy.net
+  url: http://ingy.net
+- name: Andrew Cole
+
+keywords: [testml, testing, acmeism]
+
+homepage: http://testml.org
+repository:
+  url: git://github.com/ingydotnet/testml-cd.git
+  type: git
+bugs:
+  url: https://github.com/ingydotnet/testml-cd/issues
+
+rubygems:
+  name: testml
