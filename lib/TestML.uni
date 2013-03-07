@@ -1,25 +1,26 @@
+Δ 0.0.2
+
 ✓ 'TestML·Compiler'
 ✓ 'TestML·Library·Standard'
 ✓ 'TestML·Library·Debug'
 
-§TestML {
-  λ(
-    ↔runtime: «default_runtime_class»
-    ↔bridge: ∅
-    ↔compiler: TestML·Compiler
-    ↔library: [
-      TestML·Library·Standard
-      TestML·Library·Debug
-    ]
-    ↔testml
-  ) {}
+§ TestML
+  ↔runtime: «default_runtime_class»
+  ↔bridge: ∅
+  ↔compiler: TestML·Compiler
+  ↔library: [
+    TestML·Library·Standard
+    TestML·Library·Debug
+  ]
+  ↔testml
 
-  λrun() {
+  λ
+    ∍runtime.register(∍)
+
+  λ run
     ∍runtime(
       compiler: ∍compiler
       bridge: ∍bridge
       library: ∍library
       testml: ∍testml
     ).run
-  }
-}
