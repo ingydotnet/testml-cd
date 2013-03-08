@@ -5,7 +5,7 @@ classes:
 - !class
   name: TestML
   accessors:
-  - !accessor
+  - !accessor &runtime
     name: runtime
     value: !classObject
       name: «default_runtime_class»
@@ -26,21 +26,37 @@ classes:
   - !accessor
     name: testml
   - constructor: !method
-    statements:
-    - !statement
-      code: |
-        ∍runtime.register(∍)
+      statements:
+      - !statement
+        expressions:
+        - !slot
+          name: runtime
+        - !call
+          name: register
+          args:
+          - !self {}
   methods:
   - !method
     name: run
     statements:
     - !statement
-      code: |
-        ∍runtime(
-        compiler: ∍compiler
-        bridge: ∍bridge
-        library: ∍library
-        testml: ∍testml
-        ).run
-
-
+      expressions:
+      - !slot
+        name: runtime
+      - !construct
+        args:
+        - !hash
+          - - key: !string compiler
+            - val: !slot
+                name: compiler
+          - - key: !string bridge
+            - val: !slot
+                name: bridge
+          - - key: !string library
+            - val: !slot
+                name: library
+          - - key: !string testml
+            - val: !slot
+                name: testml
+      - !call
+        name: run
