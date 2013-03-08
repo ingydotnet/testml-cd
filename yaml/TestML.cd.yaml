@@ -1,0 +1,46 @@
+--- !library
+name: TestML
+version: 0.0.2
+classes:
+- !class
+  name: TestML
+  accessors:
+  - !accessor
+    name: runtime
+    value: !classObject
+      name: «default_runtime_class»
+  - !accessor
+    name: bridge
+    value: !null
+  - !accessor
+    name: compiler
+    value: !classObject
+      name: TestML·Compiler
+  - !accessor
+    name: library
+    value: !array
+      - !classObject
+        name: TestML·Library·Standard
+      - !classObject
+        name: TestML·Library·Debug
+  - !accessor
+    name: testml
+  - constructor: !method
+    statements:
+    - !statement
+      code: |
+        ∍runtime.register(∍)
+  methods:
+  - !method
+    name: run
+    statements:
+    - !statement
+      code: |
+        ∍runtime(
+        compiler: ∍compiler
+        bridge: ∍bridge
+        library: ∍library
+        testml: ∍testml
+        ).run
+
+
